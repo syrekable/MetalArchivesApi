@@ -4,13 +4,17 @@
 
 As there is currently no public [metal archives](https://www.metal-archives.com/) API, the alternative solution must be proposed. Let's scrape the site and make the data free and accessible for the glory of the beast, shall we?
 
-## Schemes *(4/5 tables ready)*
+## Schemes - diagram
+
+![Database scheme diagram](/DbScheme.png?raw=true "Database scheme diagram")
+
+## Schemes - description
 
 ### Metal Band Scheme
 
 | Column            | Not null |
 |-------------------|----------|
-| BandID            |          |
+| ID                |  ✔       |
 | Name              |  ✔       |
 | Country of origin |  ✔       |
 | Location          |  ✔       |
@@ -25,7 +29,7 @@ As there is currently no public [metal archives](https://www.metal-archives.com/
 
 | Column          | Not null |
 |-----------------|----------|
-| ArtistID        | ✔        |
+| ID              | ✔        |
 | Name            | ✔        |
 | Real/full name  |          |
 | Place of origin |          |
@@ -35,22 +39,24 @@ As there is currently no public [metal archives](https://www.metal-archives.com/
 
 | Column         | Not null |
 |----------------|----------|
-| ReleaseID      |          |
+| ID             |          |
 | Band           |          |
 | Title          | ✔        |
 | Type           | ✔        |
 | Release date   | ✔        |
 | Catalog ID     |          |
 | Songs          | ✔        |
-| Lineup         | ✔        |
+| Lineup*        | ✔        |
 | Format         | ✔        |
 | Average rating |          |
+
+\**I'm not sure how to represent a lineup, I'd use some guidance*
 
 ### Label scheme
 
 | column           | not null |
 |-----------------|-------|
-| LabelID         |       |
+| ID              |       |
 | name            |   ✔   |
 | status          |   ✔   |
 | country         |   ✔   |
